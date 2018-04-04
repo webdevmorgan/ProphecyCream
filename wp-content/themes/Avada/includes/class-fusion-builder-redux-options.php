@@ -103,6 +103,7 @@ class Fusion_Builder_Redux_Options {
 				'fusion_map'                      => 'Google Map',
 				'fusion_images'                   => 'Image Carousel',
 				'fusion_imageframe'               => 'Image Frame',
+				'fusion_image_compare_SM'		  => 'Image Compare',
 				'layerslider'                     => 'Layer Slider',
 				'fusion_login'                    => 'User Login',
 				'fusion_register'                 => 'User Register',

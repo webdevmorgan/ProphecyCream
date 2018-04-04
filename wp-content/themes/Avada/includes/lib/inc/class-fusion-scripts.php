@@ -329,6 +329,15 @@ class Fusion_Scripts {
 				'1',
 				true,
 			),
+
+			array(
+				'fusion-image-compare',
+				self::$js_folder_url . '/general/fusion-image-compare.js',
+				self::$js_folder_path . '/general/fusion-image-compare.js',
+				array( 'jquery' ),
+				'1',
+				true,
+			),
 			array(
 				'fusion-equal-heights',
 				self::$js_folder_url . '/general/fusion-equal-heights.js',

@@ -2029,7 +2029,7 @@ class Fusion_Builder_Migrate {
 
 						$column_close_open_tag = '[/fusion_builder_column][fusion_builder_column type="1_1" background_position="left top" background_color="" border_size="" border_color="" border_style="solid" spacing="yes" background_image="" background_repeat="no-repeat" padding="" margin_top="0px" margin_bottom="0px" class="" id="" animation_type="" animation_speed="0.3" animation_direction="left" hide_on_mobile="no" center_content="no" min_height="none"]';
 
-						if ( 'fusion_button' === $shortcode_name || 'fusion_fontawesome' === $shortcode_name || 'fusion_imageframe' === $shortcode_name || 'fusion_separator' === $shortcode_name || 'fusion_text' === $shortcode_name ) {
+						if ( 'fusion_button' === $shortcode_name || 'fusion_fontawesome' === $shortcode_name || 'fusion_imageframe' === $shortcode_name || 'fusion_image_compare_SM' === $shortcode_name || 'fusion_separator' === $shortcode_name || 'fusion_text' === $shortcode_name ) {
 							$column_close_open_tag = '';
 						}
 						$row_content = substr_replace( $row_content, $column_close_open_tag, $element_position + $element_position_change, 0 );

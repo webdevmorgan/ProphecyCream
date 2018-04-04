@@ -590,7 +590,7 @@ if ( ! function_exists( 'fusion_extract_shortcode_contents' ) ) {
 		// Setup the array of all registered shortcodes.
 		$shortcodes = array_keys( $shortcode_tags );
 		$no_space_shortcodes = array( 'fusion_dropcap' );
-		$omitted_shortcodes  = array( 'fusion_code', 'fusion_imageframe', 'fusion_slide' );
+		$omitted_shortcodes  = array( 'fusion_code', 'fusion_imageframe', 'fusion_slide','fusion_image_compare_SM' );
 
 		// Extract contents from all shortcodes recursively. @codingStandardsIgnoreLine
 		if ( in_array( $m[2], $shortcodes ) && ! in_array( $m[2], $omitted_shortcodes ) ) {

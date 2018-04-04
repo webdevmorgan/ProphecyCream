@@ -998,6 +998,7 @@ class RevSliderPluginUpdate {
 						//get image url, then get the image id and save it in image_id
 						
 						$image_id = $slide->getParam('image_id', '');
+						$after_image_id = $slide->getParam('after_image_id', '');
 						$image = $slide->getParam('image', '');
 						
 						$ml_id = '';
