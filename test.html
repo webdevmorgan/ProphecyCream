@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style>
+        #social-feed-block {
+            display: -ms-grid;
+            display: grid;
+            max-width: 1245px;
+            max-height: 751px;
+            width: 100%;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: auto auto auto;
+            margin: 0 auto;
+            height: 100%;
+            position: relative;
+        }
+
+        #social-feed-block div {
+            position: relative;
+        }
+
+        #social-feed-block div img {
+            width: 100%;
+            height: 100%;
+        }
+
+        #social-feed-block div:nth-of-type(1) {
+            background: #eee;
+            display: block;
+            -ms-grid-column: 1;
+            -ms-grid-column-span: 2;
+            grid-column: 1 / span 2;
+            -ms-grid-row: 1;
+            -ms-grid-row-span: 2;
+            grid-row: 1 / span 2;
+        }
+
+        #social-feed-block div:nth-of-type(2) {
+            background: #eee;
+            -ms-grid-column: 1;
+            -ms-grid-column-span: 1;
+            grid-column: 1 / span 1;
+            -ms-grid-row: 3;
+            -ms-grid-row-span: 1;
+            grid-row: 3 / span 1;
+        }
+
+        #social-feed-block div:nth-of-type(3) {
+            background: #eee;
+            -ms-grid-column: 2;
+            -ms-grid-column-span: 1;
+            grid-column: 2 / span 1;
+            -ms-grid-row: 3;
+            -ms-grid-row-span: 1;
+            grid-row: 3 / span 1;
+        }
+
+        #social-feed-block div:nth-of-type(4) {
+            background: #eee;
+            -ms-grid-column: 3;
+            -ms-grid-column-span: 1;
+            grid-column: 3 / span 1;
+            -ms-grid-row: 1;
+            -ms-grid-row-span: 1;
+            grid-row: 1 / span 1;
+        }
+
+        #social-feed-block div:nth-of-type(5) {
+            background: #eee;
+            -ms-grid-column: 3;
+            -ms-grid-column-span: 1;
+            grid-column: 3 / span 1;
+            -ms-grid-row: 2;
+            -ms-grid-row-span: 1;
+            grid-row: 2 / span 1;
+        }
+
+        #social-feed-block div:nth-of-type(6) {
+            background: #eee;
+            -ms-grid-column: 3;
+            -ms-grid-column-span: 1;
+            grid-column: 3 / span 1;
+            -ms-grid-row: 3;
+            -ms-grid-row-span: 1;
+            grid-row: 3 / span 1;
+        }
+
+        #social-feed-block div:nth-of-type(7) {
+            background: #eee;
+            -ms-grid-column: 4;
+            -ms-grid-column-span: 1;
+            grid-column: 4 / span 1;
+            -ms-grid-row: 1;
+            -ms-grid-row-span: 1;
+            grid-row: 1 / span 1;
+        }
+
+        #social-feed-block div:nth-of-type(8) {
+            background: #eee;
+            -ms-grid-column: 5;
+            -ms-grid-column-span: 1;
+            grid-column: 5 / span 1;
+            -ms-grid-row: 1;
+            -ms-grid-row-span: 1;
+            grid-row: 1 / span 1;
+        }
+
+        #social-feed-block div:nth-of-type(9) {
+            background: #eee;
+            -ms-grid-column: 4;
+            -ms-grid-column-span: 2;
+            grid-column: 4 / span 2;
+            -ms-grid-row: 2;
+            -ms-grid-row-span: 2;
+            grid-row: 2 / span 2;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="social-feed-block">
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script>
+        jQuery(document).ready(function() {
+            var socialFeed = jQuery('#social-feed-block');
+            if (socialFeed.length > 0) {
+                socialFeed.html('<div></div><div><a href="https://www.instagram.com/prophecyskincare" target="_blank"><img src="http://prophecyskincare.com/wp-content/uploads/2018/04/social-feed-instagram@1x.jpg" /></a></div><div></div><div></div><div><a href="http://www.youtube.com/channel/UCZcxUvXh7ZHN_uXieUj6aDw" target="_blank"><img src="http://prophecyskincare.com/wp-content/uploads/2018/04/social-feed-youtube@1x.jpg" /></a></div><div><img src="http://prophecyskincare.com/wp-content/uploads/2018/04/social-feed-hashtag@1x.jpg" /></div><div><a href="https://www.facebook.com/ProphecySkincare/" target="_blank"><img src="http://prophecyskincare.com/wp-content/uploads/2018/04/social-feed-facebook@1x.jpg" /></a></div><div></div><div></div>');
+                jQuery.get("https://www.instagram.com/prophecyskincare/?__a=1", function(data, status) {
+                    if (status.toLowerCase() == 'success') {
+                        var data = data.graphql.user.edge_owner_to_timeline_media.edges;
+                        var len = data.length;
+
+                        //var html = '';
+                        var instaCount = 0;
+                        for (var i = 0; i < 9; i++) {
+                            var block = jQuery('div', socialFeed).eq(i);
+                            switch (i) {
+                                case 0:
+                                    block.html('<img src="' + data[instaCount].node.display_url + '">');
+                                    instaCount++
+                                    break;
+                                case 2:
+                                    block.html('<img src="' + data[instaCount].node.display_url + '">');
+                                    instaCount++
+                                    break
+                                case 3:
+                                    block.html('<img src="' + data[instaCount].node.display_url + '">');
+                                    instaCount++
+                                    break;
+                                case 7:
+                                    block.html('<img src="' + data[instaCount].node.display_url + '">');
+                                    instaCount++
+                                    break;
+                                case 8:
+                                    block.html('<img src="' + data[instaCount].node.display_url + '">');
+                                    instaCount++
+                                    break;
+                            }
+                        }
+                        socialFeed.html(html);
+                    }
+                    //socialFeed.html("Data: " + JSON.stringify(data.graphql.user.edge_owner_to_timeline_media.edges) + "\nStatus: " + status);
+                });
+            }
+        })
+
+    </script>
+</body>
+
+</html>

@@ -66,7 +66,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php endif; ?>
 		<?php endif; ?>
 		<a class="fusion-one-page-text-link fusion-page-load-link"></a>
-
 		<?php wp_footer(); ?>
 	</body>
 </html>

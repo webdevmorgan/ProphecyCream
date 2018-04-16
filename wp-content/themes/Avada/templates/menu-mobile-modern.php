@@ -34,7 +34,15 @@ $displayed_menu = get_post_meta( $c_page_id, 'pyre_displayed_menu', true );
 		<?php endif; ?>
 
 		<?php if ( class_exists( 'WooCommerce' ) && Avada()->settings->get( 'woocommerce_cart_link_main_nav' ) ) : ?>
-			<a href="<?php echo esc_url_raw( get_permalink( get_option( 'woocommerce_cart_page_id' ) ) ); ?>" class="fusion-icon fusion-icon-shopping-cart"  aria-label="<?php esc_attr_e( 'Toggle mobile cart', 'Avada' ); ?>"></a>
+			<?php
+				global $woocommerce;
+
+				$cart_count  = '0';
+				if ( $woocommerce->cart->get_cart_contents_count() ) {
+					$cart_count =  $woocommerce->cart->get_cart_contents_count();
+				}
+			?>
+			<a href="<?php echo esc_url_raw( get_permalink( get_option( 'woocommerce_cart_page_id' ) ) ); ?>" class="fusion-icon fusion-icon-shopping-cart"  aria-label="<?php esc_attr_e( 'Toggle mobile cart', 'Avada' ); ?>"><span class="mobile-cart-counter"><?php echo $cart_count; ?></span></a>
 		<?php endif; ?>
 	</div>
 <?php

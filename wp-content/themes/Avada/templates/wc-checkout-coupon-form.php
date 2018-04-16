@@ -16,7 +16,7 @@ if ( ! wc_coupons_enabled() ) {
 	return;
 }
 ?>
-
+<!--
 <form class="woocommerce-content-box full-width checkout_coupon" method="post">
 
 	<h2 class="promo-code-heading fusion-alignleft"><?php esc_attr_e( 'Have A Promotional Code?', 'Avada' ); ?></h2>
@@ -33,3 +33,4 @@ if ( ! wc_coupons_enabled() ) {
 		<div class="clear"></div>
 	</div>
 </form>
+-->

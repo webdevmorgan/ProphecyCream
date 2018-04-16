@@ -13,8 +13,9 @@
 global $woocommerce, $current_user;
 ?>
 <div class="avada-myaccount-user">
+	<?php if ( isset($current_user->display_name) ) { ?>
 	<div class="avada-myaccount-user-column username">
-		<?php if ( $current_user->display_name ) { ?>
+		
 			<span class="hello">
 				<?php
 				printf(
@@ -26,11 +27,11 @@ global $woocommerce, $current_user;
 				);
 				?>
 			</span>
-		<?php } else { ?>
-			<span class="hello"><?php esc_attr_e( 'Hello', 'Avada' ); ?></span>
-		<?php } ?>
+		
+			
 
 	</div>
+	<?php } ?>
 
 	<?php if ( Avada()->settings->get( 'woo_acc_msg_1' ) ) : ?>
 		<div class="avada-myaccount-user-column message">
@@ -43,7 +44,4 @@ global $woocommerce, $current_user;
 			<span class="msg"><?php echo Avada()->settings->get( 'woo_acc_msg_2' ); // WPCS: XSS ok. ?></span>
 		</div>
 	<?php endif; ?>
-	<div class="avada-myaccount-user-column">
-		<span class="view-cart"><a href="<?php echo esc_url_raw( get_permalink( get_option( 'woocommerce_cart_page_id' ) ) ); ?>"><?php esc_attr_e( 'View Cart', 'Avada' ); ?></a></span>
-	</div>
 </div>
